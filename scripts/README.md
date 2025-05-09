@@ -30,7 +30,7 @@
 
 # 1. Overview
 
-This directory contains Python scripts for the MNIST digit recognition project. These scripts handle data preparation, feature extraction, model training, and evaluation. They can be run independently from the command line or from within the Jupyter notebook.
+This directory houses Python scripts for the MNIST digit recognition project. These scripts manage dataset preparation, feature extraction, model training, and performance evaluation. Each script can be executed independently via command line or within a Jupyter notebook environment.
 
 # 2. Scripts
 
@@ -112,7 +112,7 @@ The scripts should be run in the following order:
 
 # 4. Dependencies
 
-All scripts depend on the Python libraries specified in the project's `requirements.txt` file, including:
+All scripts require the Python libraries specified in the project's `requirements.txt` file, including:
 - TensorFlow
 - NumPy
 - Pandas
