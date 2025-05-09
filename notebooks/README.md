@@ -35,13 +35,13 @@
 
 # 1. Overview
 
-This directory contains Jupyter notebooks for the MNIST digit recognition project. These notebooks provide an interactive environment to explore the dataset, visualize the data, build and train the Artificial Neural Network (ANN) model, and evaluate its performance.
+This folder houses Jupyter notebooks dedicated to the MNIST digit recognition project. These notebooks offer an interactive platform to delve into the dataset, visualize data, construct and train the Artificial Neural Network (ANN) model, and assess its performance.
 
 # 2. Notebooks
 
 ## 2.1. 01_data_preparation.ipynb
 
-This notebook focuses on the data loading and preparation steps:
+This notebook is centered on the steps for data loading and preparation:
 
 1. **Setup and Import**: Loading necessary libraries and setting up the environment
 2. **Data Loading**: Downloading the MNIST dataset using TensorFlow's datasets module
@@ -53,13 +53,13 @@ This notebook focuses on the data loading and preparation steps:
 
 This notebook covers the modeling, training, and evaluation pipeline:
 
-1. **Data Loading**: Loading the preprocessed MNIST data
-2. **Model Architecture**: Creating an Artificial Neural Network with:
+1. **Data Loading**: Importing the preprocessed MNIST data
+2. **Model Architecture**: Designing an Artificial Neural Network with:
    - Input layer (784 neurons)
    - Three hidden layers (512, 256, 128 neurons) with ReLU activation
    - Dropout layers (0.2, 0.3, 0.4) for regularization
    - Output layer (10 neurons) with softmax activation
-3. **Model Compilation**: Setting up the optimizer, loss function, and evaluation metrics
+3. **Model Compilation**: Configuring the optimizer, loss function, and evaluation metrics
 4. **Model Training**: Training the model with callbacks for early stopping and model checkpointing
 5. **Model Evaluation**: Evaluating performance on the test set with accuracy, confusion matrix, and classification report
 6. **Results Visualization**: Plotting training/validation metrics and prediction examples
@@ -67,7 +67,7 @@ This notebook covers the modeling, training, and evaluation pipeline:
 
 ## 2.3. exploratory_analysis.ipynb
 
-This notebook contains additional exploratory data analysis:
+This notebook includes further exploratory data analysis:
 - Basic environment verification
 - Simple examples of Python data analysis
 
@@ -80,22 +80,22 @@ To run these notebooks:
    docker-compose up -d
    ```
 
-2. Access Jupyter via browser:
+2. Open Jupyter in a web browser:
    ```
    http://localhost:8888
    ```
 
 3. Navigate to the `notebooks` directory and open the desired notebook
 
-4. Execute the notebooks in order:
-   - Start with `01_data_preparation.ipynb`
-   - Then proceed to `02_model_training.ipynb`
+4. Run the notebooks sequentially:
+   - Begin with `01_data_preparation.ipynb`
+   - Follow with `02_model_training.ipynb`
 
 Alternatively, you can connect VS Code to the running container and open the notebooks directly in VS Code's Jupyter extension.
 
 # 4. Notebook Dependencies
 
-The notebooks depend on the following Python libraries (installed in the Docker container):
+The notebooks rely on the following Python libraries (installed in the Docker container):
 - TensorFlow 2.15.0
 - NumPy 1.26.0
 - Pandas 2.1.3
