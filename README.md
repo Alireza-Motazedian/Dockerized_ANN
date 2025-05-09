@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="figures/logo.png" alt="MNIST Samples" width="70%" style="margin: 20px 0;">
+    <img src="figures/Banner_ANN.png" alt="MNIST Samples" width="70%" style="margin: 20px 0;">
 </div>
 
 <div align="center">
