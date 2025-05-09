@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <h1>MNIST Digit Recognition using Artificial Neural Networks</h1>
+  <h1>Handwritten Digit Recognition with Artificial Neural Networks using MNIST Dataset</h1>
 </div>
 
 # Table of Contents 
@@ -74,28 +74,28 @@
 
 # 1. Project Overview
 
-This project implements an Artificial Neural Network (ANN) to recognize handwritten digits from the MNIST dataset. The entire project is containerized using Docker for easy setup and reproducibility, making it an ideal learning environment for students exploring machine learning fundamentals.
+This repository contains an implementation of an Artificial Neural Network (ANN) designed to classify handwritten digits from the MNIST dataset. The entire solution is packaged within Docker containers to ensure consistent setup and reproducibility, creating an excellent educational environment for those studying the fundamentals of machine learning.
 
-The MNIST dataset is a collection of 70,000 grayscale images of handwritten digits (0-9), widely considered the "Hello World" of machine learning. Our implementation achieves approximately 98% accuracy using a straightforward feedforward neural network architecture.
+The MNIST dataset comprises 70,000 grayscale images of handwritten digits (ranging from 0 to 9) and is often referred to as the "Hello World" of machine learning. Our neural network implementation achieves roughly 98% accuracy using a standard feedforward neural network design.
 
 # 2. Educational Objectives
 
-Through this project, students will learn:
+This project helps students gain knowledge in:
 
-- **Machine Learning Fundamentals**: Understanding data preprocessing, model training, evaluation metrics, and visualization techniques
-- **Neural Network Architecture**: Designing multi-layer feedforward networks with appropriate activation functions
-- **Regularization Techniques**: Implementing dropout to prevent overfitting
-- **Docker Containerization**: Working with isolated, reproducible development environments
-- **Data Visualization**: Creating meaningful visualizations to understand model performance
-- **Python Best Practices**: Organizing code, documentation, and project structure
+- **Machine Learning Fundamentals**: Exploring data preprocessing techniques, model training methodologies, evaluation metrics, and data visualization approaches
+- **Neural Network Architecture**: Creating multi-layer feedforward networks and selecting appropriate activation functions
+- **Regularization Techniques**: Applying dropout layers to combat overfitting
+- **Docker Containerization**: Utilizing isolated, reproducible environments for development
+- **Data Visualization**: Generating informative visualizations to interpret model performance
+- **Python Best Practices**: Structuring code, writing documentation, and organizing project components
 
 # 3. Prerequisites
 
-- Docker and Docker Compose installed on your system
-- Git for cloning the repository
-- Basic understanding of Python and machine learning concepts
+- Docker and Docker Compose installed on your computer
+- Git installed for repository cloning
+- Fundamental understanding of Python programming and machine learning concepts
 
-No Python or ML libraries need to be installed locally, as everything runs within the Docker container, thus eliminating compatibility issues across different operating systems and environments.
+There's no need to install Python or any machine learning libraries on your local system since everything runs within the Docker container, eliminating compatibility issues across different platforms and environments.
 
 # 4. Project Structure
 
@@ -156,28 +156,28 @@ docker-compose up --build -d
 
 ## 5.3. Access Jupyter Notebook
 
-Open your browser and navigate to:
+Launch your web browser and navigate to:
 
 ```
 http://localhost:8888
 ```
 
-This will open Jupyter Notebook where you can run the interactive notebooks:
-- `01_data_preparation.ipynb` - Explore and prepare the MNIST dataset
-- `02_model_training.ipynb` - Build, train, and evaluate the neural network model
+This will open the Jupyter Notebook interface where you can access and run the interactive notebooks:
+- `01_data_preparation.ipynb` - For exploring and preparing the MNIST dataset
+- `02_model_training.ipynb` - For constructing, training, and evaluating the neural network model
 
 # 6. Project Components
 
 ## 6.1. Data Preparation
 
-The MNIST dataset consists of 28×28 pixel grayscale images of handwritten digits. The data preparation process includes:
+The MNIST dataset consists of 28×28 pixel grayscale images representing handwritten digits. The data preparation workflow includes:
 
-1. **Downloading**: Automatic download using TensorFlow's dataset API
-2. **Normalization**: Scaling pixel values from [0-255] to [0-1] for better training
-3. **Reshaping**: Flattening 28×28 images into 784-length vectors for input to the neural network
-4. **Train-Test Split**: Using the standard 60,000 training and 10,000 test images
+1. **Downloading**: Automatically retrieving the dataset using TensorFlow's dataset API
+2. **Normalization**: Converting pixel values from the range [0-255] to [0-1] to improve training efficiency
+3. **Reshaping**: Converting 28×28 images into 784-element vectors for neural network input
+4. **Train-Test Split**: Utilizing the standard division of 60,000 training images and 10,000 test images
 
-To prepare the data, run the `01_data_preparation.ipynb` notebook or:
+To prepare the dataset, execute the `01_data_preparation.ipynb` notebook or run:
 
 ```bash
 # Inside the Docker container
@@ -186,27 +186,27 @@ python scripts/data_prep.py
 
 ## 6.2. Neural Network Architecture
 
-Our model uses a feedforward neural network with:
+Our implementation uses a feedforward neural network with the following structure:
 
-1. **Input Layer**: 784 neurons (one for each pixel in the flattened image)
+1. **Input Layer**: 784 neurons (corresponding to each pixel in the flattened image)
 2. **Hidden Layers**:
    - First hidden layer: 512 neurons with ReLU activation
    - Second hidden layer: 256 neurons with ReLU activation
    - Third hidden layer: 128 neurons with ReLU activation
-3. **Dropout Layers**: Added after each hidden layer (rates: 0.2, 0.3, 0.4) to prevent overfitting
-4. **Output Layer**: 10 neurons with softmax activation (probability distribution over digits 0-9)
+3. **Dropout Layers**: Implemented after each hidden layer (with rates of 0.2, 0.3, and 0.4) to reduce overfitting
+4. **Output Layer**: 10 neurons with softmax activation (representing probability distribution across digits 0-9)
 
 ## 6.3. Training Process
 
-The model is trained using:
+The neural network is trained with the following parameters:
 
-1. **Optimizer**: Adam optimizer with default learning rate
-2. **Loss Function**: Categorical cross-entropy (standard for multi-class classification)
-3. **Batch Size**: 128 samples per gradient update
-4. **Early Stopping**: Training stops when validation loss stops improving (patience=10)
-5. **Model Checkpointing**: Saves the best model based on validation accuracy
+1. **Optimizer**: Adam optimizer utilizing the default learning rate
+2. **Loss Function**: Categorical cross-entropy (the standard choice for multi-class classification)
+3. **Batch Size**: 128 examples per gradient update
+4. **Early Stopping**: Training terminates when validation loss no longer improves (with patience=10)
+5. **Model Checkpointing**: The best-performing model based on validation accuracy is saved
 
-To train the model, run the `02_model_training.ipynb` notebook or:
+To train the model, run the `02_model_training.ipynb` notebook or execute:
 
 ```bash
 # Inside the Docker container
@@ -215,53 +215,53 @@ python scripts/train_ann.py
 
 ## 6.4. Evaluation and Visualization
 
-The model evaluation produces:
+The model evaluation generates:
 
-1. **Confusion Matrix**: Shows correct and incorrect classifications for each digit
-2. **Classification Report**: Detailed metrics including precision, recall, and F1-score
-3. **Training History**: Plots showing accuracy and loss during training
-4. **Sample Predictions**: Visualization of correctly and incorrectly classified digits
+1. **Confusion Matrix**: Displaying the distribution of correct and incorrect classifications for each digit
+2. **Classification Report**: Providing detailed metrics including precision, recall, and F1-score
+3. **Training History**: Charts illustrating accuracy and loss progression during the training process
+4. **Sample Predictions**: Visual examples of correctly and incorrectly classified digits
 
 # 7. Learning Exercises for Students
 
 1. **Modify the Network Architecture**:
-   - Add or remove hidden layers
-   - Change the number of neurons in each layer
-   - Experiment with different activation functions (sigmoid, tanh, leaky ReLU)
+   - Experiment with adding or removing hidden layers
+   - Adjust the number of neurons in different layers
+   - Test various activation functions (sigmoid, tanh, leaky ReLU)
 
 2. **Tune Hyperparameters**:
-   - Try different optimizers (SGD, RMSprop)
-   - Modify learning rates
-   - Adjust dropout rates
-   - Change batch sizes and number of epochs
+   - Experiment with alternative optimizers (SGD, RMSprop)
+   - Adjust the learning rate values
+   - Modify dropout rates
+   - Vary batch sizes and training epochs
 
 3. **Implement Data Augmentation**:
-   - Add rotation, translation, or scaling to training images
-   - Create a data generator for augmentation
+   - Incorporate rotation, translation, or scaling to training images
+   - Develop a data generator for performing augmentation
 
 4. **Compare with Other Models**:
-   - Implement a Convolutional Neural Network (CNN)
-   - Try a simpler model like Logistic Regression
-   - Compare performance metrics across different approaches
+   - Develop a Convolutional Neural Network (CNN) implementation
+   - Test simpler approaches like Logistic Regression
+   - Compare performance metrics across different model architectures
 
 5. **Visualization Improvements**:
-   - Create t-SNE visualizations of feature spaces
-   - Generate class activation maps
-   - Visualize neuron activations for different digits
+   - Generate t-SNE visualizations of feature spaces
+   - Create class activation maps
+   - Visualize individual neuron activations for different input digits
 
 # 8. Common Issues and Solutions
 
 ## 8.1. Docker Container Issues
 
-- **Port Already in Use**: If you see an error about port 8888 being already in use, change the port mapping in docker-compose.yml from "8888:8888" to another port like "8889:8888".
-- **Container Not Starting**: Ensure Docker service is running on your machine.
-- **Memory Issues**: Increase memory allocation for Docker in the settings if the model training is too slow.
+- **Port Already in Use**: If you encounter an error indicating port 8888 is already occupied, modify the port mapping in docker-compose.yml from "8888:8888" to an alternative port such as "8889:8888".
+- **Container Not Starting**: Verify that the Docker service is running on your system.
+- **Memory Issues**: If model training proceeds too slowly, increase the memory allocation for Docker in the settings.
 
 ## 8.2. Training Issues
 
-- **Low Accuracy**: Check normalization of input data and model architecture.
-- **Overfitting**: Increase dropout rates or add L1/L2 regularization.
-- **Slow Training**: Reduce batch size or simplify the model architecture.
+- **Low Accuracy**: Examine the input data normalization and review the model architecture.
+- **Overfitting**: Try increasing dropout rates or implementing L1/L2 regularization.
+- **Slow Training**: Consider reducing the batch size or simplifying the network architecture.
 
 # 9. Resources for Further Learning
 
@@ -272,4 +272,4 @@ The model evaluation produces:
 
 # 10. License
 
-This project is licensed under the terms of the LICENSE file included in the repository.
+This project is made available under the terms specified in the LICENSE file included within this repository.
